@@ -24,8 +24,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: execute script
       run: |
-        python gdax_bot.py -j -gha BTC-USD BUY 5.00 USD
-        python gdax_bot.py -j -gha ETH-USD BUY 5.00 USD
+        python gdax_bot.py -j -gha -sandbox BTC-USD BUY 5.00 USD
       env:
         PASSPHRASE: ${{ secrets.PASSPHRASE}}
         API_KEY: ${{ secrets.API_KEY}}
